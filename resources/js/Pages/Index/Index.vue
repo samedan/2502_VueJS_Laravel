@@ -1,12 +1,8 @@
 <template>
-    <MainLayout>
-        <div>Main Page</div>
-        <Link href="/hello">Hello</Link>
-    </MainLayout>
+    <div>Main Page</div>
+    <Link href="/hello">Hello</Link>
 </template>
 
 <script setup>
 import { Link } from "@inertiajs/vue3";
-import MainLayout from "../../Layouts/MainLayout.vue";
-defineProps(["message"]);
 </script>

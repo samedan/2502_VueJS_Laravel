@@ -24,6 +24,12 @@
 
 > php artisan inertia:middleware
 
+### Run app
+
+> php artisan serve
+
+> npm run dev
+
 ### Pages Routes Inertia
 
 > resources/js/Pages/Index/index.vue
@@ -37,3 +43,18 @@
 ### Layout
 
 > <template><slot>Default</slot></template>
+
+### Persistent Layout
+
+```
+<script>
+import MainLayout from "../../Layouts/MainLayout.vue";
+export default {
+    layout: MainLayout,
+};
+</script>
+```
+
+### Default Layout
+
+> resources/js/app.js -> page.default.layout = page.default.layout || MainLayout
