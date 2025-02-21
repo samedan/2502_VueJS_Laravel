@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Listing;
 use Illuminate\Http\Request;
 
 class IndexController extends Controller
@@ -12,6 +13,7 @@ class IndexController extends Controller
     [
         "message" => "Hellow from Laravel"
     ]);
+
     }
     public function show() {
         return inertia('Index/Show');

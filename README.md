@@ -58,3 +58,37 @@ export default {
 ### Default Layout
 
 > resources/js/app.js -> page.default.layout = page.default.layout || MainLayout
+
+### Migrations, factories
+
+> php artisan make:factory ListingFactory
+
+> php artisan migrate:refresh
+
+> php artisan db:seed
+
+> php artisan migrate:refresh --seed
+
+### Clean Tinker
+
+> composer dumpautoload
+
+> php artisan tinker
+
+> TINKER> Listing::all()
+
+```
+Listing::create([
+    'beds' => 2, 'baths' => 2, 'area' => 100, 'city' => 'North', 'street' => 'Tinker st', 'street_nr' => 20, 'code' => 'TS', 'price' => 200_000
+    ])
+```
+
+### ListingController
+
+> php artisan make:controller --resource ListingController
+
+# Routes in Controller
+
+> web.php-> Route::resource('listing', ListingController::class);
+
+> php artisan route:list
