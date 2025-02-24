@@ -4,6 +4,7 @@
             <div>
                 <label>Beds</label>
                 <input type="text" v-model.number="form.beds" />
+                <div v-if="form.errors?.beds">{{ form.errors.beds }}</div>
             </div>
 
             <div>
@@ -49,7 +50,7 @@
 </template>
 
 <script setup>
-import { reactive } from "vue";
+import { reactive, ref } from "vue";
 import { router } from "@inertiajs/vue3";
 // import { useForm } from "@inertiajs/vue3";
 
@@ -65,7 +66,9 @@ const form = reactive({
     price: 0,
 });
 
-const create = () => router.post("/listing", form);
+const create = () => {
+    router.post("/listing", form);
+};
 // const create = () => form.post("/listing", form);
 </script>
 

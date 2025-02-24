@@ -113,3 +113,19 @@ defineProps({
 });
 </script>
 ```
+
+### Middleware
+
+> php artisan inertia:middleware -> app/Http/Middleware/HandleInertiaMiddleware.php
+
+> Kernel.php -> protected $middlewareGroups = ['web' => [... HandleInertiaRequests::class,]]
+
+# Add message from Laravel
+
+> ListingController public function store( ... ->with('success', 'Listing was created'));
+
+# Pass message in Middleware
+
+> /Middleware/HandleInertiaRequests.php -> public function share( return array_merge( ...'flash'))
+
+### Validation
